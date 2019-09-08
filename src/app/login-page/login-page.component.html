@@ -1,3 +1,40 @@
-<p>
+<!-- <p>
   login-page works!
-</p>
+</p> -->
+<div *ngIf="afAuth.authState | async as authUser; else loginTemplate">
+  <img [src]="authUser.photoUrl">
+  <h4>{{authUser.displayName}}</h4>
+  <button (click)="logout()">Logout</button>
+  <!-- <pre>
+        {{authUser | json}}
+    </pre>     -->
+  <app-users-list></app-users-list>
+</div>
+<ng-template #loginTemplate>
+<div class="outer">
+<h4 id="urban">Welcome to the Urban Diary</h4>
+ <!-- <div id="inner">
+ <button (click)="login()" class="btn btn-danger">Login with Google</button>
+ <img src="../../assets/google.png" />
+</div> -->
+<div class="box">
+    <a class="button" href="#popup1">Try me</a>
+  </div>
+  <div id="popup1" class="overlay">
+      <div class="popup">
+        <h2>Account Login</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+          You can Login to Urban Diary with
+          <div id="inner">
+            <div class="row">
+              <div class="col-4">
+              <img src="../../assets/google.png"  (click)="login()"/>
+            </div>
+            </div> 
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+</ng-template>
