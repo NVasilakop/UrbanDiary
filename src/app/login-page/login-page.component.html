@@ -1,22 +1,18 @@
 <!-- <p>
   login-page works!
 </p> -->
+<app-navbar></app-navbar>
 <div *ngIf="afAuth.authState | async as authUser; else loginTemplate">
-  <img [src]="authUser.photoUrl">
+  <!-- <img [src]="authUser.photoUrl">
   <h4>{{authUser.displayName}}</h4>
-  <button (click)="logout()">Logout</button>
-  <!-- <pre>
-        {{authUser | json}}
-    </pre>     -->
   <app-users-list></app-users-list>
-</div>
+</div> -->
+<button (click)="logout()">Logout</button>
 <ng-template #loginTemplate>
 <div class="outer">
 <h4 id="urban">Welcome to the Urban Diary</h4>
- <!-- <div id="inner">
- <button (click)="login()" class="btn btn-danger">Login with Google</button>
- <img src="../../assets/google.png" />
-</div> -->
+<!-- <app-users-list></app-users-list> -->
+<app-chatroom></app-chatroom>
 <div class="box">
     <a class="button" href="#popup1">Try me</a>
   </div>

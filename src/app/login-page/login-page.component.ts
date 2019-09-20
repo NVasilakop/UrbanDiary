@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import * as firebase from 'firebase/app';
 import {AngularFireAuth} from '@angular/fire/auth';
 
@@ -11,7 +11,6 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit() {
   }
-
   constructor(public afAuth: AngularFireAuth) {
     // this.afAuth.authState
   }
